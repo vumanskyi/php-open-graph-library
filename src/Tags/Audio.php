@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace VU\OpenGraph\Tags;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
+use VU\OpenGraph\TagFactory;
 
 class Audio extends TagFactory
 {

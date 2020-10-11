@@ -1,10 +1,10 @@
 {
-    "name": "vladumanskyi/php-open-graph-vanilla",
+    "name": "vumanskyi/php-open-graph-vanilla",
     "description": "This is a simple PHP library which help to interact with Open Graph",
-    "keywords": ["open-graph", "opengraph", "facebook", "twitter-card", "seo", "Vlad Umanskyi", "VladUmanskyi"],
+    "keywords": ["php-library", "open-graph", "opengraph", "facebook", "twitter-card", "seo", "Vlad Umanskyi", "VladUmanskyi"],
     "type": "library",
     "license": "MIT",
-    "homepage": "",
+    "version": "0.1.0",
     "authors": [
         {
             "name": "Vlad Umanskyi",
@@ -14,6 +14,10 @@
     "require": {
         "php": "^7.3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "vimeo/psalm": "3.1.*"
+    },
     "autoload": {
         "psr-4": {
             "VU\\OpenGraph\\": "src/"
@@ -21,8 +25,5 @@
     },
     "autoload-dev": {
         "Tests\\": "tests/"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9"
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace VU\OpenGraph\Tags;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
+use VU\OpenGraph\TagFactory;
 
 class Music extends TagFactory
 {
@@ -210,6 +211,22 @@ class Music extends TagFactory
 
     public function render()
     {
-        //TODO - implementation
+        $properties = get_object_vars($this);
+
+        foreach ($properties as $key => $property) {
+            if (in_array($key, ['attrAlbum', 'attrSong', 'validAttrAlbum', 'validAttrSong', 'musician'])
+                || empty($property)) {
+                continue;
+            }
+
+            $this->getOpenGraph()->render([
+                'property'  => 'music:'.$key,
+                'content'   => $property,
+            ]);
+        }
+
+        $this->additionalRender($this->getAttrAlbum(), 'music:', true);
+        $this->additionalRender($this->getAttrSong(), 'music:', true);
+        $this->additionalRender($this->getMusician(), 'music:musician');
     }
 }

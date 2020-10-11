@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace VU\OpenGraph\Tags;
 
+use VU\OpenGraph\TagFactory;
+
 class Basic extends TagFactory
 {
     /**
