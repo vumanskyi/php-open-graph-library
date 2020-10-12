@@ -13,7 +13,7 @@ abstract class TagFactory
     /**
      * @var Configuration
      */
-    private $configuration;
+    protected $configuration;
 
     /**
      * @return string[]

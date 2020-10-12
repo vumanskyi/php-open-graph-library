@@ -125,8 +125,16 @@ class Video extends TagFactory
         return $this->attributes;
     }
 
-    public function render()
+    public function rules(): array
     {
-        // TODO: Implement render() method.
+        return [];
+    }
+
+    public function handle()
+    {
+        parent::handle();
+
+        $this->additional($this->attributes, self::OG_PREFIX . 'video:', true);
+        $this->additional($this->additionalAttributes, 'video:', true);
     }
 }

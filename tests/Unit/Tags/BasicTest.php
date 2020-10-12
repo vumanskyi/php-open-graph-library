@@ -56,7 +56,7 @@ class BasicTest extends TestCase
     /**
      * @test
      */
-    public function it_render()
+    public function it_handle()
     {
         $locale = 'fr_FR';
         $title = 'Test title';

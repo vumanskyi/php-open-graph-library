@@ -11,7 +11,7 @@ class TwitterCard extends TagFactory
     /**
      * @var string
      */
-    const PREFIX = 'twitter:';
+    public const OG_PREFIX = 'twitter:';
 
     /**
      * @var array
@@ -197,8 +197,14 @@ class TwitterCard extends TagFactory
         return in_array(strtolower($card), $this->validCard);
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [
+            'openGraph',
+            'validCard',
+        ];
     }
 }

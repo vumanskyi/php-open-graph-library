@@ -8,6 +8,11 @@ use VU\OpenGraph\TagFactory;
 class Article extends TagFactory
 {
     /**
+     * @var string
+     */
+    public const OG_PREFIX = 'article:';
+
+    /**
      * @var \DateTime
      */
     protected $publish_time;
@@ -157,8 +162,22 @@ class Article extends TagFactory
         return $this;
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [
+            'author',
+            'tag',
+        ];
     }
+
+    public function handle()
+    {
+        parent::handle();
+        $this->additional($this->getAuthor(), self::OG_PREFIX . 'author');
+        $this->additional($this->getTag(), self::OG_PREFIX . 'tag');
+    }
+
 }

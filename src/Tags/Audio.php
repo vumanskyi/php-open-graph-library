@@ -76,8 +76,25 @@ class Audio extends TagFactory
         return $this->attributes;
     }
 
-    public function render()
+    /**
+     * @return array
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [
+            static::OG_PREFIX . 'audio',
+        ];
+    }
+
+    public function handle()
+    {
+        if ($this->url) {
+            $this->configuration->handle()->render([
+                'property' => static::OG_PREFIX . 'audio',
+                'content' => $this->getUrl(),
+            ]);
+        }
+
+        $this->additional($this->attributes, static::OG_PREFIX.'audio:', true);
     }
 }

@@ -8,6 +8,11 @@ use VU\OpenGraph\TagFactory;
 class Book extends TagFactory
 {
     /**
+     * @var string
+     */
+    public const OG_PREFIX = 'book:';
+
+    /**
      * @var string[]
      */
     protected $author = [];
@@ -107,8 +112,22 @@ class Book extends TagFactory
         return $this;
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [
+            'author',
+            'tag'
+        ];
+    }
+
+    public function handle()
+    {
+        parent::handle();
+
+        $this->additional($this->getTag(), static::OG_PREFIX . 'tag');
+        $this->additional($this->getAuthor(), static::OG_PREFIX . 'author');
     }
 }

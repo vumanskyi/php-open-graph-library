@@ -77,8 +77,23 @@ class Image extends TagFactory
         return $this->attributes;
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [static::OG_PREFIX . 'image:'];
+    }
+
+    public function handle()
+    {
+        if ($this->url) {
+            $this->configuration->handle()->render([
+                'property' => static::OG_PREFIX . 'image',
+                'content' => $this->getUrl(),
+            ]);
+        }
+
+        $this->additional($this->getAttributes(), static::OG_PREFIX . 'image:', true);
     }
 }

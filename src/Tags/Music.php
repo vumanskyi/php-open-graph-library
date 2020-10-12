@@ -11,6 +11,11 @@ class Music extends TagFactory
     /**
      * @var string
      */
+    public const OG_PREFIX = 'music:';
+
+    /**
+     * @var string
+     */
     protected $song;
 
     /**
@@ -209,24 +214,26 @@ class Music extends TagFactory
         return $this;
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        $properties = get_object_vars($this);
+        return [
+            'attrAlbum',
+            'attrSong',
+            'validAttrAlbum',
+            'validAttrSong',
+            'musician'
+        ];
+    }
 
-        foreach ($properties as $key => $property) {
-            if (in_array($key, ['attrAlbum', 'attrSong', 'validAttrAlbum', 'validAttrSong', 'musician'])
-                || empty($property)) {
-                continue;
-            }
+    public function handle()
+    {
+        parent::handle();
 
-            $this->getOpenGraph()->render([
-                'property'  => 'music:'.$key,
-                'content'   => $property,
-            ]);
-        }
-
-        $this->additionalRender($this->getAttrAlbum(), 'music:', true);
-        $this->additionalRender($this->getAttrSong(), 'music:', true);
-        $this->additionalRender($this->getMusician(), 'music:musician');
+        $this->additional($this->getAttrAlbum(), static::OG_PREFIX, true);
+        $this->additional($this->getAttrSong(), static::OG_PREFIX, true);
+        $this->additional($this->getMusician(), static::OG_PREFIX . 'musician');
     }
 }

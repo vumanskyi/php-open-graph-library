@@ -11,6 +11,11 @@ class Profile extends TagFactory
     /**
      * @var string
      */
+    public const OG_PREFIX = 'profile:';
+
+    /**
+     * @var string
+     */
     protected $first_name;
 
     /**
@@ -134,8 +139,13 @@ class Profile extends TagFactory
         return in_array(strtolower($gender), $this->validGender);
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [
+            'validGender'
+        ];
     }
 }
