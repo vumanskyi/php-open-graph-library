@@ -11,4 +11,11 @@ interface RenderHandler
      * @return string|void
      */
     public function render(array $data);
+
+    /**
+     * Display content according to the input params
+     *
+     * @return string
+     */
+    public function content(): string;
 }

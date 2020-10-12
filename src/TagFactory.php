@@ -10,7 +10,15 @@ abstract class TagFactory
      */
     const OG_PREFIX = 'og:';
 
+    /**
+     * @var Configuration
+     */
     private $configuration;
+
+    /**
+     * @return string[]
+     */
+    abstract public function rules(): array;
 
     /**
      * TagFactory constructor.
@@ -21,17 +29,12 @@ abstract class TagFactory
         $this->configuration = $configuration;
     }
 
-    /**
-     * @var array
-     */
-    protected $rules = [];
-
-    public function render()
+    public function handle()
     {
         $properties = get_object_vars($this);
 
         foreach ($properties as $property => $content) {
-            if ($this->isExistProperty($property, $content)) {
+            if (is_array($content) || $this->isExistProperty($property, $content)) {
                 continue;
             }
 
@@ -39,21 +42,49 @@ abstract class TagFactory
                 'property'  => static::OG_PREFIX.$property,
                 'content'   => $content,
             ]);
+        }
+    }
 
-//            $this->getOpenGraph()->render([
-//                'property'  => static::OG_PREFIX.$property,
-//                'content'   => $content,
-//            ]);
+    /**
+     * @return string
+     */
+    public function render()
+    {
+        return $this->configuration->handle()->content();
+    }
+
+    /**
+     * @param array  $data
+     * @param string $prefixKey
+     * @param bool   $useKey
+     */
+    public function additional(array $data = [], string $prefixKey, bool $useKey = false)
+    {
+        foreach ($data as $key => $value) {
+            if (empty($value)) {
+                continue;
+            }
+
+            $property = $useKey ? $prefixKey.$key : $prefixKey;
+
+            $this->configuration->handle()->render([
+                'property'  => $property,
+                'content'   => $value,
+            ]);
         }
     }
 
     /**
      * @param string $property
-     * @param string $content
+     * @param mixed $content
      * @return bool
      */
-    public function isExistProperty(string $property, string $content): bool
+    public function isExistProperty(string $property, $content = null): bool
     {
-        return in_array($property, $this->rules) || empty($content);
+        if (empty($content) || is_object($content)) {
+            return true;
+        }
+
+        return in_array($property, $this->rules());
     }
 }

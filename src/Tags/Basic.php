@@ -207,8 +207,19 @@ class Basic extends TagFactory
         return $this;
     }
 
-    public function render()
+    /**
+     * @return string[]
+     */
+    public function rules(): array
     {
-        //TODO - implementation
+        return [
+            'localAlternate'
+        ];
+    }
+
+    public function handle()
+    {
+        parent::handle();
+        $this->additional($this->getLocalAlternate(), 'locale:alternate');
     }
 }
