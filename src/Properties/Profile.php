@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Profile extends TagFactory
+class Profile extends PropertyFactory
 {
     /**
      * @var string

@@ -1,38 +1,38 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\Unit\Tags;
+namespace Tests\Unit\Properties;
 
 use PHPUnit\Framework\TestCase;
 use VU\OpenGraph\Configuration;
 use VU\OpenGraph\Render;
-use VU\OpenGraph\TagConfiguration;
-use VU\OpenGraph\Tags\Article;
-use VU\OpenGraph\Tags\Audio;
-use VU\OpenGraph\Tags\Basic;
-use VU\OpenGraph\Tags\Book;
-use VU\OpenGraph\Tags\Image;
-use VU\OpenGraph\Tags\Music;
-use VU\OpenGraph\Tags\Profile;
-use VU\OpenGraph\Tags\TwitterCard;
-use VU\OpenGraph\Tags\Video;
+use VU\OpenGraph\PropertyConfiguration;
+use VU\OpenGraph\Properties\Article;
+use VU\OpenGraph\Properties\Audio;
+use VU\OpenGraph\Properties\Basic;
+use VU\OpenGraph\Properties\Book;
+use VU\OpenGraph\Properties\Image;
+use VU\OpenGraph\Properties\Music;
+use VU\OpenGraph\Properties\Profile;
+use VU\OpenGraph\Properties\TwitterCard;
+use VU\OpenGraph\Properties\Video;
 
-class TagConfigurationTest extends TestCase
+class PropertyConfigurationTest extends TestCase
 {
     /**
      * @test
      */
     public function it_instance()
     {
-        $this->assertInstanceOf(Configuration::class, new TagConfiguration(new Render()));
+        $this->assertInstanceOf(Configuration::class, new PropertyConfiguration(new Render()));
     }
 
     /**
      * @test
      */
-    public function it_tags()
+    public function it_properties()
     {
-        $configuration = new TagConfiguration(new Render());
+        $configuration = new PropertyConfiguration(new Render());
 
         $tags = [
             'getBasic'       => new Basic($configuration),
@@ -46,6 +46,6 @@ class TagConfigurationTest extends TestCase
             'useTwitterCard' => new TwitterCard($configuration),
         ];
 
-        $this->assertEquals($tags, $configuration->tags());
+        $this->assertEquals($tags, $configuration->properties());
     }
 }

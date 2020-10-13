@@ -11,11 +11,11 @@ The package could be installed with composer:
 ## Usage
 ```
 use VU\OpenGraph\Render;
-use VU\OpenGraph\TagConfiguration;
-use VU\OpenGraph\Tags\Basic;
+use VU\OpenGraph\PropertyConfiguration;
+use VU\OpenGraph\Properties\Basic;
 
 $render = new Render();
-$configuration = new TagConfiguration($render);
+$configuration = new PropertyConfiguration($render);
 
 $basic = new Basic($configuration);
 $basic->setTitle('Test title')
@@ -33,14 +33,14 @@ And the result will be:
 ```
 
 Another types:
- - \VU\OpenGraph\Tags\Articles
- - \VU\OpenGraph\Tags\Audio
- - \VU\OpenGraph\Tags\Basic
- - \VU\OpenGraph\Tags\Book
- - \VU\OpenGraph\Tags\Image
- - \VU\OpenGraph\Tags\Profile
- - \VU\OpenGraph\Tags\Video
- - \VU\OpenGraph\Tags\TwitterCard
+ - \VU\OpenGraph\Properties\Articles
+ - \VU\OpenGraph\Properties\Audio
+ - \VU\OpenGraph\Properties\Basic
+ - \VU\OpenGraph\Properties\Book
+ - \VU\OpenGraph\Properties\Image
+ - \VU\OpenGraph\Properties\Profile
+ - \VU\OpenGraph\Properties\Video
+ - \VU\OpenGraph\Properties\TwitterCard
  
 ## Unit testing
 ```

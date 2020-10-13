@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace VU\OpenGraph;
 
-abstract class TagFactory
+abstract class PropertyFactory
 {
     /**
      * @var string
@@ -21,7 +21,7 @@ abstract class TagFactory
     abstract public function rules(): array;
 
     /**
-     * TagFactory constructor.
+     * PropertyFactory constructor.
      * @param Configuration $configuration
      */
     public function __construct(Configuration $configuration)

@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\Unit\Tags;
+namespace Tests\Unit\Properties;
 
 use PHPUnit\Framework\TestCase;
 use VU\OpenGraph\Exceptions\OpenGraphException;
 use VU\OpenGraph\Render;
-use VU\OpenGraph\TagConfiguration;
-use VU\OpenGraph\Tags\Profile;
+use VU\OpenGraph\PropertyConfiguration;
+use VU\OpenGraph\Properties\Profile;
 
 class ProfileTest extends TestCase
 {
@@ -16,7 +16,7 @@ class ProfileTest extends TestCase
     public function setUp(): void
     {
         $render = new Render();
-        $this->config = new TagConfiguration($render);
+        $this->config = new PropertyConfiguration($render);
     }
 
     /**

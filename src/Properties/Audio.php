@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Image extends TagFactory
+class Audio extends PropertyFactory
 {
     /**
      * @var string
@@ -23,16 +23,13 @@ class Image extends TagFactory
      */
     protected $validAttributes = [
         'secure_url',
-        'width',
-        'height',
         'type',
-        'alt',
     ];
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->url;
     }
@@ -40,9 +37,9 @@ class Image extends TagFactory
     /**
      * @param string $url
      *
-     * @return Image
+     * @return Audio
      */
-    public function setUrl(string $url): Image
+    public function setUrl(string $url): Audio
     {
         $this->url = $url;
 
@@ -52,9 +49,11 @@ class Image extends TagFactory
     /**
      * @param array $attributes
      *
-     * @return Image
+     * @throws OpenGraphException
+     *
+     * @return Audio
      */
-    public function setAttributes(array $attributes): Image
+    public function setAttributes(array $attributes): Audio
     {
         $validAttributes = $this->validAttributes;
 
@@ -78,22 +77,24 @@ class Image extends TagFactory
     }
 
     /**
-     * @return string[]
+     * @return array
      */
     public function rules(): array
     {
-        return [static::OG_PREFIX . 'image:'];
+        return [
+            static::OG_PREFIX . 'audio',
+        ];
     }
 
     public function handle()
     {
         if ($this->url) {
             $this->configuration->handle()->render([
-                'property' => static::OG_PREFIX . 'image',
+                'property' => static::OG_PREFIX . 'audio',
                 'content' => $this->getUrl(),
             ]);
         }
 
-        $this->additional($this->getAttributes(), static::OG_PREFIX . 'image:', true);
+        $this->additional($this->attributes, static::OG_PREFIX.'audio:', true);
     }
 }

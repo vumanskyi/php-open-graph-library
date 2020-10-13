@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Book extends TagFactory
+class Book extends PropertyFactory
 {
     /**
      * @var string

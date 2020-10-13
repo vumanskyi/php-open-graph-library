@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\Unit\Tags;
+namespace Tests\Unit\Properties;
 
 use PHPUnit\Framework\TestCase;
 use VU\OpenGraph\Exceptions\OpenGraphException;
 use VU\OpenGraph\Render;
-use VU\OpenGraph\TagConfiguration;
-use VU\OpenGraph\Tags\Music;
+use VU\OpenGraph\PropertyConfiguration;
+use VU\OpenGraph\Properties\Music;
 
 class MusicTest extends TestCase
 {
@@ -16,7 +16,7 @@ class MusicTest extends TestCase
     public function setUp(): void
     {
         $render = new Render();
-        $this->config = new TagConfiguration($render);
+        $this->config = new PropertyConfiguration($render);
     }
 
     /**
