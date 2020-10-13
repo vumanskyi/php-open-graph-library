@@ -1,0 +1,10 @@
+preset: recommended
+
+risky: false
+
+finder:
+  exclude:
+    - tests
+    - vendor
+  name:
+    - "*.php"
