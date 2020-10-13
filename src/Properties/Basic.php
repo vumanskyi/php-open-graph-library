@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Basic extends TagFactory
+class Basic extends PropertyFactory
 {
     /**
      * @var string
@@ -213,7 +214,7 @@ class Basic extends TagFactory
     public function rules(): array
     {
         return [
-            'localAlternate'
+            'localAlternate',
         ];
     }
 

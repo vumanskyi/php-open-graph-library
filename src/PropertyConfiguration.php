@@ -1,19 +1,31 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph;
 
-use VU\OpenGraph\Tags\Article;
-use VU\OpenGraph\Tags\Audio;
-use VU\OpenGraph\Tags\Basic;
-use VU\OpenGraph\Tags\Book;
-use VU\OpenGraph\Tags\Image;
-use VU\OpenGraph\Tags\Music;
-use VU\OpenGraph\Tags\Profile;
-use VU\OpenGraph\Tags\TwitterCard;
-use VU\OpenGraph\Tags\Video;
+use VU\OpenGraph\Properties\Article;
+use VU\OpenGraph\Properties\Audio;
+use VU\OpenGraph\Properties\Basic;
+use VU\OpenGraph\Properties\Book;
+use VU\OpenGraph\Properties\Image;
+use VU\OpenGraph\Properties\Music;
+use VU\OpenGraph\Properties\Profile;
+use VU\OpenGraph\Properties\TwitterCard;
+use VU\OpenGraph\Properties\Video;
 
-class TagConfiguration implements Configuration
+/**
+ * @method Article     getArticle()
+ * @method Image       getImage()
+ * @method Audio       getAudio()
+ * @method Book        getBook()
+ * @method Basic       getBasic()
+ * @method Music       getMusic()
+ * @method Profile     getProfile()
+ * @method Video       getVideo()
+ * @method TwitterCard useTwitterCard()
+ */
+class PropertyConfiguration implements Configuration
 {
     /**
      * @var RenderHandler
@@ -22,6 +34,7 @@ class TagConfiguration implements Configuration
 
     /**
      * TagConfiguration constructor.
+     *
      * @param RenderHandler $handler
      */
     public function __construct(RenderHandler $handler)
@@ -32,7 +45,7 @@ class TagConfiguration implements Configuration
     /**
      * @return array
      */
-    public function tags(): array
+    public function properties(): array
     {
         return [
             'getBasic'       => new Basic($this),

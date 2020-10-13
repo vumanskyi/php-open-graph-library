@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph;
@@ -15,7 +16,8 @@ class Render implements RenderHandler
     protected $template = '<meta property="{property}" content="{content}">';
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
+     *
      * @throws RenderException
      */
     public function render(array $data)
@@ -24,9 +26,9 @@ class Render implements RenderHandler
             throw new RenderException();
         }
 
-        $this->content .= PHP_EOL . strtr($this->template, [
+        $this->content .= PHP_EOL.strtr($this->template, [
             '{property}' => $data['property'],
-            '{content}' => $data['content'],
+            '{content}'  => $data['content'],
         ]);
 
         return $this->content;

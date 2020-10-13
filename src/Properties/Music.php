@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Music extends TagFactory
+class Music extends PropertyFactory
 {
     /**
      * @var string
@@ -224,7 +225,7 @@ class Music extends TagFactory
             'attrSong',
             'validAttrAlbum',
             'validAttrSong',
-            'musician'
+            'musician',
         ];
     }
 
@@ -234,6 +235,6 @@ class Music extends TagFactory
 
         $this->additional($this->getAttrAlbum(), static::OG_PREFIX, true);
         $this->additional($this->getAttrSong(), static::OG_PREFIX, true);
-        $this->additional($this->getMusician(), static::OG_PREFIX . 'musician');
+        $this->additional($this->getMusician(), static::OG_PREFIX.'musician');
     }
 }

@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Video extends TagFactory
+class Video extends PropertyFactory
 {
     /**
      * @var string
@@ -134,7 +135,7 @@ class Video extends TagFactory
     {
         parent::handle();
 
-        $this->additional($this->attributes, self::OG_PREFIX . 'video:', true);
+        $this->additional($this->attributes, self::OG_PREFIX.'video:', true);
         $this->additional($this->additionalAttributes, 'video:', true);
     }
 }

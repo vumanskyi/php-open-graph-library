@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Article extends TagFactory
+class Article extends PropertyFactory
 {
     /**
      * @var string
@@ -176,8 +177,7 @@ class Article extends TagFactory
     public function handle()
     {
         parent::handle();
-        $this->additional($this->getAuthor(), self::OG_PREFIX . 'author');
-        $this->additional($this->getTag(), self::OG_PREFIX . 'tag');
+        $this->additional($this->getAuthor(), self::OG_PREFIX.'author');
+        $this->additional($this->getTag(), self::OG_PREFIX.'tag');
     }
-
 }

@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Image extends TagFactory
+class Image extends PropertyFactory
 {
     /**
      * @var string
@@ -82,18 +83,18 @@ class Image extends TagFactory
      */
     public function rules(): array
     {
-        return [static::OG_PREFIX . 'image:'];
+        return [static::OG_PREFIX.'image:'];
     }
 
     public function handle()
     {
         if ($this->url) {
             $this->configuration->handle()->render([
-                'property' => static::OG_PREFIX . 'image',
-                'content' => $this->getUrl(),
+                'property' => static::OG_PREFIX.'image',
+                'content'  => $this->getUrl(),
             ]);
         }
 
-        $this->additional($this->getAttributes(), static::OG_PREFIX . 'image:', true);
+        $this->additional($this->getAttributes(), static::OG_PREFIX.'image:', true);
     }
 }

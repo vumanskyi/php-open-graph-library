@@ -1,22 +1,23 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph;
 
 /**
  * This is an implementation of configuration for open graph
- * With this configuration you can override exists tags and set own implementation.
+ * With this configuration you can override exists properties and set own implementation.
  *
  * @author Vladyslav Umanskyi <vladumanskyi@gmail.com>
  */
 interface Configuration
 {
     /**
-     * Consist all available tags.
+     * Consist all available properties.
      *
      * @return array
      */
-    public function tags(): array;
+    public function properties(): array;
 
     /**
      * @return RenderHandler

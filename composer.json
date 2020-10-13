@@ -1,11 +1,12 @@
 {
-    "name": "vumanskyi/php-open-graph-vanilla",
+    "name": "vumanskyi/php-open-graph-library",
     "description": "This is a simple PHP library which help to interact with Open Graph Protocol and Twitter Card",
     "keywords": ["php-library", "open-graph", "opengraph", "facebook", "twitter-card", "seo", "Vlad Umanskyi", "VladUmanskyi"],
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/vumanskyi/php-open-graph-library",
     "version": "0.1.0",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Vlad Umanskyi",

@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
-namespace VU\OpenGraph\Tags;
+namespace VU\OpenGraph\Properties;
 
 use VU\OpenGraph\Exceptions\OpenGraphException;
-use VU\OpenGraph\TagFactory;
+use VU\OpenGraph\PropertyFactory;
 
-class Audio extends TagFactory
+class Audio extends PropertyFactory
 {
     /**
      * @var string
@@ -82,7 +83,7 @@ class Audio extends TagFactory
     public function rules(): array
     {
         return [
-            static::OG_PREFIX . 'audio',
+            static::OG_PREFIX.'audio',
         ];
     }
 
@@ -90,8 +91,8 @@ class Audio extends TagFactory
     {
         if ($this->url) {
             $this->configuration->handle()->render([
-                'property' => static::OG_PREFIX . 'audio',
-                'content' => $this->getUrl(),
+                'property' => static::OG_PREFIX.'audio',
+                'content'  => $this->getUrl(),
             ]);
         }
 
