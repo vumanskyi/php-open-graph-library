@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -145,7 +146,7 @@ class Profile extends PropertyFactory
     public function rules(): array
     {
         return [
-            'validGender'
+            'validGender',
         ];
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -224,7 +225,7 @@ class Music extends PropertyFactory
             'attrSong',
             'validAttrAlbum',
             'validAttrSong',
-            'musician'
+            'musician',
         ];
     }
 
@@ -234,6 +235,6 @@ class Music extends PropertyFactory
 
         $this->additional($this->getAttrAlbum(), static::OG_PREFIX, true);
         $this->additional($this->getAttrSong(), static::OG_PREFIX, true);
-        $this->additional($this->getMusician(), static::OG_PREFIX . 'musician');
+        $this->additional($this->getMusician(), static::OG_PREFIX.'musician');
     }
 }

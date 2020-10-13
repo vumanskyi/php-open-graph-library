@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -176,8 +177,7 @@ class Article extends PropertyFactory
     public function handle()
     {
         parent::handle();
-        $this->additional($this->getAuthor(), self::OG_PREFIX . 'author');
-        $this->additional($this->getTag(), self::OG_PREFIX . 'tag');
+        $this->additional($this->getAuthor(), self::OG_PREFIX.'author');
+        $this->additional($this->getTag(), self::OG_PREFIX.'tag');
     }
-
 }

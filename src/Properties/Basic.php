@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -213,7 +214,7 @@ class Basic extends PropertyFactory
     public function rules(): array
     {
         return [
-            'localAlternate'
+            'localAlternate',
         ];
     }
 

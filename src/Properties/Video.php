@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -134,7 +135,7 @@ class Video extends PropertyFactory
     {
         parent::handle();
 
-        $this->additional($this->attributes, self::OG_PREFIX . 'video:', true);
+        $this->additional($this->attributes, self::OG_PREFIX.'video:', true);
         $this->additional($this->additionalAttributes, 'video:', true);
     }
 }

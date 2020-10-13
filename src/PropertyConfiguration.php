@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph;
@@ -33,6 +34,7 @@ class PropertyConfiguration implements Configuration
 
     /**
      * TagConfiguration constructor.
+     *
      * @param RenderHandler $handler
      */
     public function __construct(RenderHandler $handler)

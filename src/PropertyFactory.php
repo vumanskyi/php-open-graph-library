@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph;
@@ -22,6 +23,7 @@ abstract class PropertyFactory
 
     /**
      * PropertyFactory constructor.
+     *
      * @param Configuration $configuration
      */
     public function __construct(Configuration $configuration)
@@ -76,7 +78,8 @@ abstract class PropertyFactory
 
     /**
      * @param string $property
-     * @param mixed $content
+     * @param mixed  $content
+     *
      * @return bool
      */
     public function isExistProperty(string $property, $content = null): bool

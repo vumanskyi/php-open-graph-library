@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Exceptions;
@@ -14,8 +15,9 @@ class OpenGraphException extends \Exception
 
     /**
      * OpenGraphException constructor.
-     * @param string $message
-     * @param int $code
+     *
+     * @param string         $message
+     * @param int            $code
      * @param Throwable|null $previous
      */
     public function __construct($message = self::MESSAGE, $code = 0, Throwable $previous = null)

@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Exceptions;
 
 use Throwable;
 
-class RenderException extends  \Exception
+class RenderException extends \Exception
 {
     /**
      * @var string
@@ -14,8 +15,9 @@ class RenderException extends  \Exception
 
     /**
      * RenderException constructor.
-     * @param string $message
-     * @param int $code
+     *
+     * @param string         $message
+     * @param int            $code
      * @param Throwable|null $previous
      */
     public function __construct($message = self::MESSAGE, $code = 0, Throwable $previous = null)

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -119,7 +120,7 @@ class Book extends PropertyFactory
     {
         return [
             'author',
-            'tag'
+            'tag',
         ];
     }
 
@@ -127,7 +128,7 @@ class Book extends PropertyFactory
     {
         parent::handle();
 
-        $this->additional($this->getTag(), static::OG_PREFIX . 'tag');
-        $this->additional($this->getAuthor(), static::OG_PREFIX . 'author');
+        $this->additional($this->getTag(), static::OG_PREFIX.'tag');
+        $this->additional($this->getAuthor(), static::OG_PREFIX.'author');
     }
 }

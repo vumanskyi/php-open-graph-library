@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -82,7 +83,7 @@ class Audio extends PropertyFactory
     public function rules(): array
     {
         return [
-            static::OG_PREFIX . 'audio',
+            static::OG_PREFIX.'audio',
         ];
     }
 
@@ -90,8 +91,8 @@ class Audio extends PropertyFactory
     {
         if ($this->url) {
             $this->configuration->handle()->render([
-                'property' => static::OG_PREFIX . 'audio',
-                'content' => $this->getUrl(),
+                'property' => static::OG_PREFIX.'audio',
+                'content'  => $this->getUrl(),
             ]);
         }
 

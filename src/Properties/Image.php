@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace VU\OpenGraph\Properties;
@@ -82,18 +83,18 @@ class Image extends PropertyFactory
      */
     public function rules(): array
     {
-        return [static::OG_PREFIX . 'image:'];
+        return [static::OG_PREFIX.'image:'];
     }
 
     public function handle()
     {
         if ($this->url) {
             $this->configuration->handle()->render([
-                'property' => static::OG_PREFIX . 'image',
-                'content' => $this->getUrl(),
+                'property' => static::OG_PREFIX.'image',
+                'content'  => $this->getUrl(),
             ]);
         }
 
-        $this->additional($this->getAttributes(), static::OG_PREFIX . 'image:', true);
+        $this->additional($this->getAttributes(), static::OG_PREFIX.'image:', true);
     }
 }
