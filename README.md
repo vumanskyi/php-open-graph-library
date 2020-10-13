@@ -12,7 +12,7 @@ This is a library to help you configure and render [Open Graph Protocol](https:/
 The package could be installed with composer:
 
 ```
-composer require vumanskyi/php-open-graph-vanilla
+composer require vumanskyi/php-open-graph-library
 ```
 
 ## Usage
