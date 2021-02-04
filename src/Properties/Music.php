@@ -233,8 +233,8 @@ class Music extends PropertyFactory
     {
         parent::handle();
 
-        $this->additional($this->getAttrAlbum(), static::OG_PREFIX, true);
-        $this->additional($this->getAttrSong(), static::OG_PREFIX, true);
-        $this->additional($this->getMusician(), static::OG_PREFIX.'musician');
+        $this->additional(static::OG_PREFIX, $this->getAttrAlbum(), true);
+        $this->additional(static::OG_PREFIX, $this->getAttrSong(),true);
+        $this->additional(static::OG_PREFIX.'musician', $this->getMusician());
     }
 }

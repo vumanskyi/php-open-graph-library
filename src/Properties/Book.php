@@ -128,7 +128,7 @@ class Book extends PropertyFactory
     {
         parent::handle();
 
-        $this->additional($this->getTag(), static::OG_PREFIX.'tag');
-        $this->additional($this->getAuthor(), static::OG_PREFIX.'author');
+        $this->additional(static::OG_PREFIX.'tag', $this->getTag());
+        $this->additional( static::OG_PREFIX.'author', $this->getAuthor());
     }
 }

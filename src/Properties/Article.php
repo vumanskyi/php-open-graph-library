@@ -177,7 +177,7 @@ class Article extends PropertyFactory
     public function handle()
     {
         parent::handle();
-        $this->additional($this->getAuthor(), self::OG_PREFIX.'author');
-        $this->additional($this->getTag(), self::OG_PREFIX.'tag');
+        $this->additional(self::OG_PREFIX.'author', $this->getAuthor());
+        $this->additional( self::OG_PREFIX.'tag', $this->getTag());
     }
 }

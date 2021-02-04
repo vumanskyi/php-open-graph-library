@@ -135,7 +135,7 @@ class Video extends PropertyFactory
     {
         parent::handle();
 
-        $this->additional($this->attributes, self::OG_PREFIX.'video:', true);
-        $this->additional($this->additionalAttributes, 'video:', true);
+        $this->additional(self::OG_PREFIX.'video:', $this->attributes, true);
+        $this->additional('video:', $this->additionalAttributes,true);
     }
 }

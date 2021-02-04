@@ -14,7 +14,7 @@ abstract class PropertyFactory
     /**
      * @var Configuration
      */
-    protected $configuration;
+    protected Configuration $configuration;
 
     /**
      * @return string[]
@@ -60,7 +60,7 @@ abstract class PropertyFactory
      * @param string $prefixKey
      * @param bool   $useKey
      */
-    public function additional(array $data = [], string $prefixKey, bool $useKey = false)
+    public function additional(string $prefixKey, array $data = [], bool $useKey = false)
     {
         foreach ($data as $key => $value) {
             if (empty($value)) {

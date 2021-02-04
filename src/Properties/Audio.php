@@ -96,6 +96,6 @@ class Audio extends PropertyFactory
             ]);
         }
 
-        $this->additional($this->attributes, static::OG_PREFIX.'audio:', true);
+        $this->additional( static::OG_PREFIX.'audio:', $this->attributes, true);
     }
 }

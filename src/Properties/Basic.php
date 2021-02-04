@@ -221,6 +221,6 @@ class Basic extends PropertyFactory
     public function handle()
     {
         parent::handle();
-        $this->additional($this->getLocalAlternate(), 'locale:alternate');
+        $this->additional('locale:alternate', $this->getLocalAlternate());
     }
 }
