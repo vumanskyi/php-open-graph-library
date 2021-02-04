@@ -5,7 +5,7 @@
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/vumanskyi/php-open-graph-library",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "minimum-stability": "stable",
     "authors": [
         {
