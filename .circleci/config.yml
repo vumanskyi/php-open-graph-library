@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/php:7.3-stretch
+      - image: circleci/php:8.0.1-node-browsers-legacy
 
     steps:
       - checkout
