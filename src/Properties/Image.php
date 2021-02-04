@@ -95,6 +95,6 @@ class Image extends PropertyFactory
             ]);
         }
 
-        $this->additional( static::OG_PREFIX.'image:', $this->getAttributes(), true);
+        $this->additional(static::OG_PREFIX.'image:', $this->getAttributes(), true);
     }
 }

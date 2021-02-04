@@ -178,6 +178,6 @@ class Article extends PropertyFactory
     {
         parent::handle();
         $this->additional(self::OG_PREFIX.'author', $this->getAuthor());
-        $this->additional( self::OG_PREFIX.'tag', $this->getTag());
+        $this->additional(self::OG_PREFIX.'tag', $this->getTag());
     }
 }
