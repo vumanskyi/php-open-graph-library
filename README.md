@@ -54,4 +54,4 @@ Another types:
 ./vendor/bin/phpunit 
 ```
 ---------------------- 
-If you have any [issues](https://github.com/vumanskyi/vanilla-open-graph/issues), pleas let me know
+If you have any [issues](https://github.com/vumanskyi/vanilla-open-graph/issues), please let me know
